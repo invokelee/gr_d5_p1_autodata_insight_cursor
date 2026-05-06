@@ -4,8 +4,13 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 from http.server import BaseHTTPRequestHandler
 from typing import Any
+
+_API_DIR = os.path.dirname(os.path.abspath(__file__))
+if _API_DIR not in sys.path:
+    sys.path.insert(0, _API_DIR)
 
 from openai import OpenAI
 
